@@ -16,17 +16,17 @@ namespace FluentInterface
     }
 
 
-    public interface MakeBeverage
+    public interface IMakeBeverage
     {
 
-        MakeBeverage AddBeans(BeanType beanType);
-        MakeBeverage GroundBeans(bool grounded);
-        MakeBeverage AddWater(int ml);
-        MakeBeverage AddSteamedMilk(int ml);
-        MakeBeverage AddMilkFoam(int ml);
-        MakeBeverage AddChocolateSyrup(int ml);
-        MakeBeverage AddWhippedCream(int ml);
-        MakeBeverage Serve();
+        IMakeBeverage AddBeans(BeanType beanType);
+        IMakeBeverage GroundBeans(bool grounded);
+        IMakeBeverage AddWater(int ml);
+        IMakeBeverage AddSteamedMilk(int ml);
+        IMakeBeverage AddMilkFoam(int ml);
+        IMakeBeverage AddChocolateSyrup(int ml);
+        IMakeBeverage AddWhippedCream(int ml);
+        IMakeBeverage Serve();
         void YourOrder();
     }
 
@@ -36,7 +36,7 @@ namespace FluentInterface
     }*/
 
     
-    class FluentCoffee : MakeBeverage
+    class FluentCoffee : IMakeBeverage
     {
         public string BeanType { get; set; }
 
@@ -61,43 +61,43 @@ namespace FluentInterface
             return new FluentCoffee();
         }*/
 
-        public MakeBeverage AddBeans(BeanType beanType)
+        public IMakeBeverage AddBeans(BeanType beanType)
         {
             BeanType = beanType.ToString();
             return this;
         }
-        public MakeBeverage GroundBeans(bool grounded)
+        public IMakeBeverage GroundBeans(bool grounded)
         {
             IsGrounded = grounded;
             return this;
         }
-        public MakeBeverage AddWater(int ml)
+        public IMakeBeverage AddWater(int ml)
         {
             Water += ml;
             return this;
         }
-        public MakeBeverage AddSteamedMilk(int ml)
+        public IMakeBeverage AddSteamedMilk(int ml)
         {
             SteamedMilk = ml;
             return this;
         }
-        public MakeBeverage AddMilkFoam(int ml)
+        public IMakeBeverage AddMilkFoam(int ml)
         {
             MilkFoam = ml;
             return this;
         }
-        public MakeBeverage AddChocolateSyrup(int ml)
+        public IMakeBeverage AddChocolateSyrup(int ml)
         {
             ChocolateSyrup = ml;
             return this;
         }
-        public MakeBeverage AddWhippedCream(int ml)
+        public IMakeBeverage AddWhippedCream(int ml)
         {
             WhippedCream = ml;
             return this;
         }
 
-        public MakeBeverage Serve()
+        public IMakeBeverage Serve()
         {
             return this;
         }
@@ -112,16 +112,15 @@ namespace FluentInterface
     {
         static void Main(string[] args)
         {
-            MakeBeverage espresso = new FluentCoffee().AddBeans(BeanType.Liberia).GroundBeans(true).AddWater(30).Serve();
+            IMakeBeverage espresso = new FluentCoffee().AddBeans(BeanType.Liberia).GroundBeans(true).AddWater(30).Serve();
             espresso.YourOrder();
 
-            MakeBeverage mocha = new FluentCoffee().AddBeans(BeanType.Robusta).GroundBeans(true).AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
+            IMakeBeverage mocha = new FluentCoffee().AddBeans(BeanType.Robusta).GroundBeans(true).AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
             mocha.YourOrder();
 
-            MakeBeverage americano = new FluentCoffee().AddBeans(BeanType.Arabica).GroundBeans(true).AddWater(30).AddWater(60).Serve();
+            IMakeBeverage americano = new FluentCoffee().AddBeans(BeanType.Arabica).GroundBeans(true).AddWater(30).AddWater(60).Serve();
             americano.YourOrder();
 
-            Yeah
             Console.ReadKey();
 
         }

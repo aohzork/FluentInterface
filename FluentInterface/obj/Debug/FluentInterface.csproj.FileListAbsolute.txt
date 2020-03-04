@@ -1,0 +1,6 @@
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\bin\Debug\FluentInterface.exe.config
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\bin\Debug\FluentInterface.exe
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\bin\Debug\FluentInterface.pdb
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.csprojAssemblyReference.cache
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.exe
+D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.pdb
