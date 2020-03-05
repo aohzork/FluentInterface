@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FluentInterface
 {
-    /*public enum Coffee
+    public enum Coffee
     {
         Americano,
         Espresso,
@@ -40,7 +40,7 @@ namespace FluentInterface
 
     class FluentCoffee : IMakeBeverage
     {
-        public string Name { get; set }
+        public string Name { get; set; }
         public string BeanType { get; set; }
         public bool IsGrounded { get; set; }
         public int Water { get; set; }
@@ -109,15 +109,16 @@ namespace FluentInterface
         {
             IMakeBeverage espresso = new FluentCoffee().CoffeeName(Coffee.Espresso).AddBeans(Beans.Liberia).GrindBeans(true).AddWater(30);
             espresso.YourOrder();
+            IMakeBeverage espresso2 = new FluentCoffee().AddWater(30).AddBeans(Beans.Arabica).GrindBeans(true);
+            espresso2.YourOrder();
+            IMakeBeverage mocha = new FluentCoffee().CoffeeName(Coffee.Mocha).AddBeans(Beans.Robusta).GrindBeans(true).AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
+            mocha.YourOrder();
 
-            //ITopping mocha = new FluentCoffee().CoffeeName(Coffee.Mocha).AddBeans(Beans.Robusta).GrindBeans(true).     //.AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
-            //mocha.YourOrder();
-
-            //ITopping americano = new FluentCoffee().CoffeeName(Coffee.Americano).AddBeans(Beans.Arabica).GrindBeans(true).BaseWater(30).AddWater(60).YourOrder();
-            //americano.YourOrder();
+            IMakeBeverage americano = new FluentCoffee().CoffeeName(Coffee.Americano).AddBeans(Beans.Arabica).GrindBeans(true).AddWater(30).AddWater(60).Serve();
+            americano.YourOrder();
 
             Console.ReadKey();
 
         }
-    }*/
+    }
 }

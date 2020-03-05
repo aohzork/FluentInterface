@@ -12,13 +12,18 @@ namespace FluentInterface.UnitTests
         public void TestEspresso ()
         {
             //Arrange
-            ITopping espresso = new FluentCoffee();
-
+            IMakeBeverage espresso = new FluentCoffee();
+            IMakeBeverage espresso2 = new FluentCoffee();
             //Act
-            espresso.AddBeans(BeanType.Arabica).GrindBeans(true).AddWater(30).Serve();
+            espresso.AddBeans(Beans.Arabica).GrindBeans(true).AddWater(30);
 
             //Assert
-            Assert.IsNotNull(espresso);
+            Assert.AreEqual(espresso, espresso2.AddWater(30)
+                            .AddBeans(Beans.Arabica)
+                            .GrindBeans(true));
+
+
+
 
         }
     }

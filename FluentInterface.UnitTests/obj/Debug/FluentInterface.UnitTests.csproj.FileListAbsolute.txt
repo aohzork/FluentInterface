@@ -14,3 +14,19 @@ D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface.UnitTests\bin\Debug\Mi
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.csproj.CopyComplete
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.dll
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.pdb
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\FluentInterface.UnitTests.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\FluentInterface.UnitTests.pdb
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\FluentInterface.exe
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\FluentInterface.pdb
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\FluentInterface.exe.config
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.csprojAssemblyReference.cache
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.csproj.CopyComplete
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.dll
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface.UnitTests\obj\Debug\FluentInterface.UnitTests.pdb

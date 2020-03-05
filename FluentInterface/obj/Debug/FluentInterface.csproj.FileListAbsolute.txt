@@ -4,3 +4,9 @@ D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\bin\Debug\FluentInterf
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.csprojAssemblyReference.cache
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.exe
 D:\DOT.NET\Dataåtkomster\FluentInterface\FluentInterface\obj\Debug\FluentInterface.pdb
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\obj\Debug\FluentInterface.csprojAssemblyReference.cache
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\obj\Debug\FluentInterface.exe
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\obj\Debug\FluentInterface.pdb
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\bin\Debug\FluentInterface.exe.config
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\bin\Debug\FluentInterface.exe
+C:\Zorkii\DOT.NET\Dataåtkomster övningar\FluentInterface\FluentInterface\bin\Debug\FluentInterface.pdb

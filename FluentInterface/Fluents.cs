@@ -1,129 +1,129 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using system;
+//using system.collections.generic;
+//using system.linq;
+//using system.text;
+//using system.threading.tasks;
 
-namespace FluentInterface
-{
-    //Class wrapping
-    public class Customer
-    {
-        private string _FullName;
-        public string FullName
-        {
-            get { return _FullName; }
-            set { _FullName = value; }
-        }
-        private DateTime _Dob;
-        public DateTime Dob
-        {
-            get { return _Dob; }
-            set { _Dob = value; }
-        }
-        private string _Address;
-        public string Address
-        {
-            get { return _Address; }
-            set { _Address = value; }
-        }
+//namespace fluentinterface
+//{
+//    //class wrapping
+//    public class customer
+//    {
+//        private string _fullname;
+//        public string fullname
+//        {
+//            get { return _fullname; }
+//            set { _fullname = value; }
+//        }
+//        private datetime _dob;
+//        public datetime dob
+//        {
+//            get { return _dob; }
+//            set { _dob = value; }
+//        }
+//        private string _address;
+//        public string address
+//        {
+//            get { return _address; }
+//            set { _address = value; }
+//        }
 
-    }
+//    }
 
-    public class CustomerFluent
-    {
-        private Customer obj = new Customer();
-        public CustomerFluent NameOfCustomer(string Name)
-        {
-            obj.FullName = Name;
-            return this;
-        }
-        public CustomerFluent Bornon(string Dob)
-        {
-            obj.Dob = Convert.ToDateTime(Dob);
-            return this;
-        }
-        public void StaysAt(string Address)
-        {
-            obj.Address = Address;
+//    public class customerfluent
+//    {
+//        private customer obj = new customer();
+//        public customerfluent nameofcustomer(string name)
+//        {
+//            obj.fullname = name;
+//            return this;
+//        }
+//        public customerfluent bornon(string dob)
+//        {
+//            obj.dob = convert.todatetime(dob);
+//            return this;
+//        }
+//        public void staysat(string address)
+//        {
+//            obj.address = address;
 
-        }
-    }
+//        }
+//    }
 
 
-    //Fluent Interface
-    public interface IName
-    {
-        IAge WithName(string name);
-    }
+//    //fluent interface
+//    public interface iname
+//    {
+//        iage withname(string name);
+//    }
 
-    public interface IAge
-    {
-        IPersist WithAge(int age);
-        IPersist ExpectedDeath(int age);
-    }
+//    public interface iage
+//    {
+//        ipersist withage(int age);
+//        ipersist expecteddeath(int age);
+//    }
 
-    public interface IPersist
-    {
-        void Save();
-    }
+//    public interface ipersist
+//    {
+//        void save();
+//    }
 
-    public class Person : IName, IAge, IPersist
-    {
+//    public class person : iname, iage, ipersist
+//    {
 
-        public string Name { get; private set; }
-        public int Age { get; private set; }
+//        public string name { get; private set; }
+//        public int age { get; private set; }
 
-        private Person()
-        {
-        }
+//        private person()
+//        {
+//        }
 
-        public static IName Create()
-        {
-            return new Person();
-        }
+//        public static iname create()
+//        {
+//            return new person();
+//        }
 
-        public IAge WithName(string name)
-        {
-            Name = name;
-            return this;
-        }
+//        public iage withname(string name)
+//        {
+//            name = name;
+//            return this;
+//        }
 
-        public IPersist WithAge(int age)
-        {
-            Age = age;
-            return this;
-        }
+//        public ipersist withage(int age)
+//        {
+//            age = age;
+//            return this;
+//        }
 
-        public IPersist ExpectedDeath(int age)
-        {
-            Age = age;
-            return this;
-        }
+//        public ipersist expecteddeath(int age)
+//        {
+//            age = age;
+//            return this;
+//        }
 
-        public void Save()
-        {
-            // save changes here
-            Console.WriteLine("Name is :" + Name);
-            Console.WriteLine("Age is :" + Age);
-            Console.WriteLine("Save Called");
-        }
-    }
+//        public void save()
+//        {
+//            // save changes here
+//            console.writeline("name is :" + name);
+//            console.writeline("age is :" + age);
+//            console.writeline("save called");
+//        }
+//    }
 
-    
 
-    /*class Program
-    {
-        static void Main(string[] args)
-        {
 
-            CustomerFluent customer = new CustomerFluent();
-            customer.Bornon("2000/01/01").NameOfCustomer("johannes").StaysAt("ALLE");
+//    class program
+//    {
+//        static void main(string[] args)
+//        {
 
-            
-            Person.Create().WithName("Hello").ExpectedDeath(5).Save();
-            Console.ReadKey();
+//            customerfluent customer = new customerfluent();
+//            customer.bornon("2000/01/01").nameofcustomer("johannes").staysat("alle");
 
-        }
-    }*/
-}
+
+//            person.create().withname("hello").expecteddeath(5).save();
+//            console.readkey();
+
+//        }
+//    }
+//}
