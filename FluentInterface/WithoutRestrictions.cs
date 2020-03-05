@@ -99,19 +99,21 @@ namespace FluentInterface
         public void YourOrder()
         {
             Console.WriteLine("Coffee Name: {0}, Used bean: {1} , grounded: {2}, water: {3} ml, steamed milk: {4} ml, milkfoam {5}, chocolate: {6}, cream: {7} ml", Name, BeanType, IsGrounded, Water, SteamedMilk, MilkFoam, ChocolateSyrup, WhippedCream);
-        }*/
+        }
 
-    /*class Program
+    }
+
+    class Program
     {
         static void Main(string[] args)
         {
-            ITopping espresso = new FluentCoffee().CoffeeName(Coffee.Espresso).AddBeans(Beans.Liberia).GrindBeans(true).BaseWater(30)
+            IMakeBeverage espresso = new FluentCoffee().CoffeeName(Coffee.Espresso).AddBeans(Beans.Liberia).GrindBeans(true).AddWater(30);
             espresso.YourOrder();
 
-            ITopping mocha = new FluentCoffee().CoffeeName(Coffee.Mocha).AddBeans(Beans.Robusta).GrindBeans(true).     //.AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
-            mocha.YourOrder();
+            //ITopping mocha = new FluentCoffee().CoffeeName(Coffee.Mocha).AddBeans(Beans.Robusta).GrindBeans(true).     //.AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
+            //mocha.YourOrder();
 
-            ITopping americano = new FluentCoffee().CoffeeName(Coffee.Americano).AddBeans(Beans.Arabica).GrindBeans(true).BaseWater(30).AddWater(60).YourOrder();
+            //ITopping americano = new FluentCoffee().CoffeeName(Coffee.Americano).AddBeans(Beans.Arabica).GrindBeans(true).BaseWater(30).AddWater(60).YourOrder();
             //americano.YourOrder();
 
             Console.ReadKey();

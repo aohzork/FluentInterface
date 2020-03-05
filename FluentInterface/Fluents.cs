@@ -121,7 +121,7 @@ namespace FluentInterface
             customer.Bornon("2000/01/01").NameOfCustomer("johannes").StaysAt("ALLE");
 
             
-            Person.Create().WithName("Hello").ExpectedDeath(5).
+            Person.Create().WithName("Hello").ExpectedDeath(5).Save();
             Console.ReadKey();
 
         }

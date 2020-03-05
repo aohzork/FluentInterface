@@ -140,7 +140,7 @@ namespace FluentInterface
         }
     }
     
-    class Program
+    /*class Program
     {
         static void Main(string[] args)
         {
@@ -156,5 +156,5 @@ namespace FluentInterface
             Console.ReadKey();
 
         }
-    }
+    }*/
 }
