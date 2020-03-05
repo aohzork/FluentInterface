@@ -18,9 +18,7 @@ namespace FluentInterface.UnitTests
             espresso.AddBeans(Beans.Arabica).GrindBeans(true).AddWater(30);
 
             //Assert
-            Assert.AreEqual(espresso, espresso2.AddWater(30)
-                            .AddBeans(Beans.Arabica)
-                            .GrindBeans(true));
+            Assert.AreEqual(espresso, espresso2.AddBeans(Beans.Arabica).GrindBeans(true).AddWater(30));
 
 
 
