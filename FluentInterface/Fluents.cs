@@ -6,49 +6,52 @@ using System.Threading.Tasks;
 
 namespace FluentInterface
 {
-    /*public class Customer
+    //Class wrapping
+    public class Customer
+    {
+        private string _FullName;
+        public string FullName
         {
-            private string _FullName;
-            public string FullName
-            {
-                get { return _FullName; }
-                set { _FullName = value; }
-            }
-            private DateTime _Dob;
-            public DateTime Dob
-            {
-                get { return _Dob; }
-                set { _Dob = value; }
-            }
-            private string _Address;
-            public string Address
-            {
-                get { return _Address; }
-                set { _Address = value; }
-            }
-
+            get { return _FullName; }
+            set { _FullName = value; }
+        }
+        private DateTime _Dob;
+        public DateTime Dob
+        {
+            get { return _Dob; }
+            set { _Dob = value; }
+        }
+        private string _Address;
+        public string Address
+        {
+            get { return _Address; }
+            set { _Address = value; }
         }
 
-        public class CustomerFluent
+    }
+
+    public class CustomerFluent
+    {
+        private Customer obj = new Customer();
+        public CustomerFluent NameOfCustomer(string Name)
         {
-            private Customer obj = new Customer();
-            public CustomerFluent NameOfCustomer(string Name)
-            {
-                obj.FullName = Name;
-                return this;
-            }
-            public CustomerFluent Bornon(string Dob)
-            {
-                obj.Dob = Convert.ToDateTime(Dob);
-                return this;
-            }
-            public void StaysAt(string Address)
-            {
-                obj.Address = Address;
+            obj.FullName = Name;
+            return this;
+        }
+        public CustomerFluent Bornon(string Dob)
+        {
+            obj.Dob = Convert.ToDateTime(Dob);
+            return this;
+        }
+        public void StaysAt(string Address)
+        {
+            obj.Address = Address;
 
-            }
-        }*/
+        }
+    }
 
+
+    //Fluent Interface
     public interface IName
     {
         IAge WithName(string name);
@@ -107,19 +110,18 @@ namespace FluentInterface
         }
     }
 
-   /* class Program
+    
+
+    /*class Program
     {
         static void Main(string[] args)
         {
-            MakeBeverage espresso = new FluentCoffee().AddBeans(BeanType.Liberia).GroundBeans(true).AddWater(30).Serve();
-            espresso.YourOrder();
 
+            CustomerFluent customer = new CustomerFluent();
+            customer.Bornon("2000/01/01").NameOfCustomer("johannes").StaysAt("ALLE");
 
-             CustomerFluent customer = new CustomerFluent();
-             customer.Bornon("2000/01/01").NameOfCustomer("johannes").StaysAt("ALLE");
-
-            //Person.Create().WithName().
-
+            
+            Person.Create().WithName("Hello").ExpectedDeath(5).
             Console.ReadKey();
 
         }

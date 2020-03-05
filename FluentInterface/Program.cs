@@ -6,50 +6,68 @@ using System.Threading.Tasks;
 
 namespace FluentInterface
 {
-      
+    public enum Coffee
+    {
+        Americano,
+        Espresso,
+        Cappuccino,
+        Latte,
+        Mocha,
+        Macchiato
+    }
 
-    public enum BeanType
+    public enum Beans
     {
         Arabica,
         Robusta,
         Liberia
     }
 
-
-    public interface IMakeBeverage
+    //fluent without restrictions
+    public interface ICoffeeName
     {
-
-        IMakeBeverage AddBeans(BeanType beanType);
-        IMakeBeverage GroundBeans(bool grounded);
-        IMakeBeverage AddWater(int ml);
-        IMakeBeverage AddSteamedMilk(int ml);
-        IMakeBeverage AddMilkFoam(int ml);
-        IMakeBeverage AddChocolateSyrup(int ml);
-        IMakeBeverage AddWhippedCream(int ml);
-        IMakeBeverage Serve();
-        void YourOrder();
+        ICoffeeBase CoffeeName(Coffee coffee);
     }
 
-    /*public interface ServeUp
+    public interface ICoffeeBase
     {
-        
-    }*/
+        ICoffeeBase AddBeans(Beans beans);
+        ICoffeeBase GrindBeans(bool grounded);
+        ITopping BaseWater(int ml);
+    }
 
+    public interface ITopping
+    {
+        IOrder AddWater(int ml);
+        IOrder AddSteamedMilk(int ml);
+        IOrder AddMilkFoam(int ml);
+        IOrder AddChocolateSyrup(int ml);
+        IOrder AddWhippedCream(int ml);
+       // IOrder Serve();
+    }
+
+    public class Espresso: ICoffeeName, ICoffeeBase
+    {
+
+    }
+
+    public interface IOrder
+    {
+        void YourOrder();
+    }
     
-    class FluentCoffee : IMakeBeverage
+    class FluentCoffee : ICoffeeName, ICoffeeBase, ITopping, IOrder
     {
+        public string Name { get; set }
         public string BeanType { get; set; }
-
-
         public bool IsGrounded { get; set; }
-        public int Water { get; set; }
-
+        public int Water { get; set }
+        public int ToppingWater { get; set; }
         public int SteamedMilk { get; set; }
-
         public int MilkFoam { get; set; }
-
         public int ChocolateSyrup { get; set; }
         public int WhippedCream { get; set; }
+
 
         /*private FluentCoffee()
         {
@@ -61,50 +79,64 @@ namespace FluentInterface
             return new FluentCoffee();
         }*/
 
-        public IMakeBeverage AddBeans(BeanType beanType)
+        public ICoffeeBase CoffeeName(Coffee coffee)
         {
-            BeanType = beanType.ToString();
+            Name = coffee.ToString();
             return this;
         }
-        public IMakeBeverage GroundBeans(bool grounded)
+
+        public ICoffeeBase AddBeans(Beans beans)
+        {
+            BeanType = beans.ToString();
+            return this;
+        }
+        public ICoffeeBase GrindBeans(bool grounded)
         {
             IsGrounded = grounded;
             return this;
         }
-        public IMakeBeverage AddWater(int ml)
+        public ITopping BaseWater(int ml)
         {
-            Water += ml;
+            Water = ml;
             return this;
         }
-        public IMakeBeverage AddSteamedMilk(int ml)
+
+        public IOrder AddWater(int ml)
+        {
+            ToppingWater = ml;
+            return this;
+        }
+
+        public IOrder AddSteamedMilk(int ml)
         {
             SteamedMilk = ml;
             return this;
         }
-        public IMakeBeverage AddMilkFoam(int ml)
+        public IOrder AddMilkFoam(int ml)
         {
             MilkFoam = ml;
             return this;
         }
-        public IMakeBeverage AddChocolateSyrup(int ml)
+        public IOrder AddChocolateSyrup(int ml)
         {
             ChocolateSyrup = ml;
             return this;
         }
-        public IMakeBeverage AddWhippedCream(int ml)
+        public IOrder AddWhippedCream(int ml)
         {
             WhippedCream = ml;
             return this;
         }
 
-        public IMakeBeverage Serve()
+        public void Serve()
         {
-            return this;
+            Console.WriteLine("Coffee Name: {0}, Used bean: {1} , grounded: {2}, water: {3} ml, steamed milk: {4} ml, milkfoam {5}, chocolate: {6}, cream: {7} ml", Name, BeanType, IsGrounded, ToppingWater, SteamedMilk, MilkFoam, ChocolateSyrup, WhippedCream);
         }
 
         public void YourOrder()
         {
-            Console.WriteLine("Used bean: {0} , grounded: {1}, water: {2} ml, steamed milk: {3} ml, milkfoam {4}, chocolate: {5}, cream: {6} ml", BeanType, IsGrounded, Water, SteamedMilk, MilkFoam, ChocolateSyrup, WhippedCream);
+            Console.WriteLine("Coffee Name: {0}, Used bean: {1} , grounded: {2}, water: {3} ml, steamed milk: {4} ml, milkfoam {5}, chocolate: {6}, cream: {7} ml", Name, BeanType, IsGrounded, ToppingWater, SteamedMilk, MilkFoam, ChocolateSyrup, WhippedCream);
+            
         }
     }
     
@@ -112,14 +144,14 @@ namespace FluentInterface
     {
         static void Main(string[] args)
         {
-            IMakeBeverage espresso = new FluentCoffee().AddBeans(BeanType.Liberia).GroundBeans(true).AddWater(30).Serve();
+            ITopping espresso = new FluentCoffee().CoffeeName(Coffee.Espresso).AddBeans(Beans.Liberia).GrindBeans(true).BaseWater(30)
             espresso.YourOrder();
 
-            IMakeBeverage mocha = new FluentCoffee().AddBeans(BeanType.Robusta).GroundBeans(true).AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
+            ITopping mocha = new FluentCoffee().CoffeeName(Coffee.Mocha).AddBeans(Beans.Robusta).GrindBeans(true).     //.AddWater(30).AddChocolateSyrup(20).AddSteamedMilk(25).AddWhippedCream(20).Serve();
             mocha.YourOrder();
 
-            IMakeBeverage americano = new FluentCoffee().AddBeans(BeanType.Arabica).GroundBeans(true).AddWater(30).AddWater(60).Serve();
-            americano.YourOrder();
+            ITopping americano = new FluentCoffee().CoffeeName(Coffee.Americano).AddBeans(Beans.Arabica).GrindBeans(true).BaseWater(30).AddWater(60).YourOrder();
+            //americano.YourOrder();
 
             Console.ReadKey();
 

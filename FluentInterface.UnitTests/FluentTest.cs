@@ -12,10 +12,10 @@ namespace FluentInterface.UnitTests
         public void TestEspresso ()
         {
             //Arrange
-            IMakeBeverage espresso = new FluentCoffee();
+            ITopping espresso = new FluentCoffee();
 
             //Act
-            espresso.AddBeans(BeanType.Arabica).GroundBeans(true).AddWater(30).Serve();
+            espresso.AddBeans(BeanType.Arabica).GrindBeans(true).AddWater(30).Serve();
 
             //Assert
             Assert.IsNotNull(espresso);
